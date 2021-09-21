@@ -1,1 +1,1 @@
-# Live chat server!
+# Live chat server
