@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "lambda-serve":"netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +16,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "socket.io": "^2.3.0",
-    "serverless-http": "^2.7.0"
+    "netlify-lambda": "^2.0.14",
+    "serverless-http": "^2.7.0",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

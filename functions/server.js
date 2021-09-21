@@ -2,7 +2,7 @@ const express = require("express");
 const socketio = require("socket.io");
 const http = require("http");
 const cors = require("cors");
-const serverless = require('serverless-http');
+// const serverless = require('serverless-http');
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 
@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 const server = http.createServer(app);
-// const io = socketio(server);
 const io = socketio(server);
+// const io = socketio(app);
 io.set('transports', ['websocket']);
 io.on("connection", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
@@ -74,4 +74,4 @@ server.listen(PORT, () => {
   console.log(`Server has started on port: ${PORT}`);
 });
 
-module.exports.handler = serverless(app);
+// module.exports.handler = serverless(app);
